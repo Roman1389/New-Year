@@ -1,0 +1,65 @@
+/*Подвал*/
+
+/*Фон для подвала*/
+
+#contacts {
+	background: -webkit-linear-gradient(
+		top,
+		rgb(14, 81, 133) 0%,
+		rgb(26, 139, 178) 60%,
+		rgb(33, 159, 193) 100%
+	);
+	background: -o-linear-gradient(
+		top,
+		rgb(14, 81, 133) 0%,
+		rgb(26, 139, 178) 60%,
+		rgb(33, 159, 193) 100%
+	);
+	background: -ms-linear-gradient(
+		top,
+		rgb(14, 81, 133) 0%,
+		rgb(26, 139, 178) 60%,
+		rgb(33, 159, 193) 100%
+	);
+	background: -moz-linear-gradient(
+		top,
+		rgb(14, 81, 133) 0%,
+		rgb(26, 139, 178) 60%,
+		rgb(33, 159, 193) 100%
+	);
+	background: linear-gradient(
+		to bottom,
+		rgb(14, 81, 133) 0%,
+		rgb(26, 139, 178) 60%,
+		rgb(33, 159, 193) 100%
+	);
+	color: #ffffff;
+	padding: 1.5rem 0;
+	margin-top: 3rem;
+}
+
+/*Стили для аккордеона в подвале*/
+
+/*Подвал О Компании*/
+.text-justify {
+	text-align: justify;
+}
+
+.accordion-item {
+	margin-bottom: 10px; /* отступ снизу */
+}
+
+/* Поворачиваем стрелку вправо при развернутом состоянии */
+.accordion-button.collapsed::after {
+	transform: rotate(270deg);
+}
+
+/* Поворачиваем стрелку на 90 градусов при развернутом состоянии */
+.accordion-button:not(.collapsed)::after {
+	transform: rotate(360deg);
+}
+
+/* Стиль для стрелки */
+.accordion-button::after {
+	transition: transform 0.3s ease; /* Добавим плавный переход для анимации */
+}

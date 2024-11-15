@@ -1,0 +1,33 @@
+/*Стили для шапки*/
+
+.header {
+	background: url("../images/Header/header.png") no-repeat center center/cover;
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #fff;
+	position: relative;
+	width: 100%;
+}
+
+.header-content {
+	max-width: 600px;
+	padding: 20px;
+	margin-top: 170px;
+}
+
+.header-title {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.intro-text {
+	font-size: 1.2rem;
+	margin-bottom: 30px;
+}
+
+.header-content .btn {
+	margin-top: 100px;
+}

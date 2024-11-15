@@ -1,0 +1,51 @@
+/*Стили для слайдеров*/
+
+.carousel-indicators [data-bs-target] {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #5f9ea0; /* Цвет неактивных кружков */
+	opacity: 0.7;
+	transition: opacity 0.3s;
+}
+
+.carousel-indicators .active {
+	background-color: #02c0ff; /* Цвет активного кружка */
+	opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	background-color: #000; /* Цвет фона кружка */
+	border-radius: 50%; /* Делает кружки круглыми */
+	padding: 15px; /* Отступы внутри кружка */
+	width: 30px;
+	height: 30px;
+	opacity: 0.8; /* Лёгкая прозрачность */
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+	opacity: 1; /* Полная непрозрачность при наведении */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+	width: auto; /* Уменьшает ширину области клика */
+	margin-left: 20px; /* Отступ от левого края для стрелки назад */
+	margin-right: 20px; /* Отступ от правого края для стрелки вперед */
+}
+
+.carousel-item img {
+	border-radius: 15px; /* Скругляем углы у изображений */
+	transition: border-radius 0.3s ease; /* Плавный переход для скругления */
+}
+
+.carousel-item {
+	overflow: hidden; /* Обрезаем содержимое за границами */
+	border-radius: 15px; /* Скругляем углы у контейнера слайда */
+}
+
+.carousel-inner {
+	border-radius: 15px; /* Скругляем углы у всего карусели */
+}

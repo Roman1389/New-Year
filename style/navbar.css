@@ -1,0 +1,40 @@
+/*Стили для навигационной панели*/
+
+.my-navbar .navbar {
+	background: #fff;
+	padding: 10px 0;
+}
+
+.my-navbar .nav-link {
+	color: #c5211e !important;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 10px; /* Отступы между пунктами меню */
+}
+
+.my-navbar .navbar-brand img {
+	width: 100px; /* Ширина логотипа на мобильной версии */
+	height: 100px; /* Высота логотипа на мобильной версии */
+	display: block;
+}
+
+.my-navbar .navbar-text .btn {
+	padding: 6px 15px;
+	font-size: 14px;
+	margin-right: 0; /* Убираем отступ справа у кнопки "Позвонить" */
+}
+
+.my-navbar .auth-buttons .btn {
+	border-color: #c5211e;
+	color: #c5211e;
+	margin-right: 10px; /* Отступы между кнопками регистрации и авторизации */
+}
+
+.my-navbar .auth-buttons .btn:hover {
+	background: #c5211e;
+	color: #fff;
+}
+
+.auth-buttons {
+	margin-right: 10px; /* Увеличенный отступ справа для большего пространства */
+}

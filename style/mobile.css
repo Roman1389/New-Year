@@ -1,0 +1,248 @@
+/* Основное подключение шрифта */
+@font-face {
+	font-family: "Cormorant Garamond";
+	src: url("../fonts/CormorantGaramond-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Применение шрифта для всех устройств */
+body {
+	font-family: "Cormorant Garamond", serif;
+}
+/*Шапка*/
+
+/*Навигационная панель*/
+
+@media (max-width: 768px) {
+	.my-navbar .navbar {
+		padding: 5px 0; /* Уменьшаем вертикальные отступы */
+	}
+
+	.my-navbar .navbar-nav {
+		flex-direction: column; /* Размещаем пункты меню по вертикали */
+		justify-content: center !important; /* Центрируем пункты меню */
+		align-items: center !important; /* Центрируем пункты меню по горизонтали */
+		width: 100%; /* Задаем ширину 100% для контейнера меню */
+	}
+
+	.navbar-text {
+		display: flex;
+		justify-content: center; /* Центрирование по горизонтали */
+		width: 100%; /* Задаем ширину 100% для контейнера */
+		margin-top: 10px; /* Отступ сверху (по желанию) */
+	}
+
+	.my-navbar .nav-link {
+		margin: 5px 0; /* Уменьшаем вертикальные отступы между пунктами меню */
+		font-size: 14px; /* Уменьшаем шрифт */
+		text-align: center; /* Центрируем текст в пункте меню */
+		width: 100%; /* Задаем ширину пунктов меню 100% */
+	}
+
+	.auth-buttons .btn {
+		padding: 4px 10px; /* Уменьшаем внутренние отступы кнопок */
+		font-size: 10px; /* Уменьшаем шрифт кнопок */
+	}
+
+	.my-navbar .navbar-brand {
+		margin-bottom: 10px; /* Добавляем отступ между логотипом и кнопками */
+	}
+
+	.my-navbar .navbar-brand img {
+		width: 100px; /* Ширина логотипа на мобильной версии */
+		height: 100px; /* Высота логотипа на мобильной версии */
+		margin-right: -25px;
+	}
+	.navbar-text.pl-0.d-lg-none {
+		margin-left: -15px; /* Добавляем отступ слева */
+	}
+}
+
+/*Наши услуги*/
+
+/*Отступ у раздела наших услуг (у слайдера по бокам)*/
+@media (max-width: 768px) {
+	.container-services {
+		padding: 5px 10px 0 10px;
+	}
+}
+/*Услуги*/
+
+/*Стили для табов*/
+@media (max-width: 768px) {
+	#serviceTabs {
+		flex-direction: column; /* Для мобильных устройств, располагаем элементы вертикально */
+		align-items: flex-start; /* Выравниваем элементы по левому краю (горизонтально) */
+		width: 100%; /* Устанавливаем ширину контейнера на 100% */
+		padding: 0 10px; /* Добавляем отступы по бокам, чтобы не касались краев экрана */
+	}
+
+	#serviceTabs .nav-item {
+		width: 100%; /* Задаем ширину 100% для каждого элемента nav-item */
+		margin-bottom: 5px; /* Отступ между элементами */
+	}
+
+	#serviceTabs .nav-link {
+		display: block; /* Делаем ссылки блочными элементами */
+		width: 100%; /* Задаем ширину 100% для ссылки */
+		text-align: left; /* Выравниваем текст внутри ссылки по левому краю */
+		padding: 10px 15px; /* Увеличиваем внутренние отступы для удобства */
+	}
+}
+
+/*Стили для текста карточек*/
+@media (max-width: 768px) {
+	/* Стили для заголовков карточек */
+	.card-body .card-title {
+		font-size: 20px; /* Уменьшаем размер заголовка */
+		text-align: justify; /* Выравнивание текста по ширине */
+	}
+
+	/* Стили для текста карточек */
+	.card-body .card-text {
+		font-size: 15px; /* Уменьшаем размер текста описания */
+		text-align: justify; /* Выравнивание текста по ширине */
+	}
+
+	.d-flex.justify-content-between.align-items-center .text-danger {
+		font-size: 15px; /* Уменьшаем размер шрифта для цены */
+	}
+
+	.d-flex.justify-content-between.align-items-center .btn {
+		font-size: 12px; /* Уменьшаем размер текста в кнопке */
+		padding: 5px 10px; /* Уменьшаем внутренние отступы кнопки */
+	}
+	/*Плюсы услуг стиль для текста*/
+	.list-unstyled li {
+		font-size: 14px; /* Уменьшите размер по вашему усмотрению */
+	}
+}
+/*Галерея*/
+
+/* Вкладки в столбик на мобильных устройствах */
+@media (max-width: 768px) {
+	#galleryTab {
+		flex-direction: column; /* Для мобильных устройств, располагаем элементы вертикально */
+		align-items: flex-start; /* Выравниваем элементы по левому краю (горизонтально) */
+		width: 100%; /* Устанавливаем ширину контейнера на 100% */
+		padding: 0 10px; /* Добавляем отступы по бокам, чтобы не касались краев экрана */
+	}
+
+	#galleryTab .nav-item {
+		width: 100%; /* Задаем ширину 100% для каждого элемента nav-item */
+		margin-bottom: 5px; /* Отступ между элементами */
+	}
+
+	#galleryTab .nav-link {
+		display: block; /* Делаем ссылки блочными элементами */
+		width: 100%; /* Задаем ширину 100% для ссылки */
+		text-align: left; /* Выравниваем текст внутри ссылки по левому краю */
+		padding: 10px 15px; /* Увеличиваем внутренние отступы для удобства */
+	}
+}
+/*Отзывы*/
+
+/*Стили для карточек с отзывами*/
+
+@media (max-width: 768px) {
+	.img-fluid {
+		border-radius: 8px; /* Можно изменить значение для большего или меньшего скругления */
+	}
+
+	.review-card {
+		border: 1px solid #ccc;
+		padding: 20px;
+		border-radius: 8px;
+		background-color: #fff;
+		text-align: justify; /* Выровнять текст по ширине */
+		position: relative; /* Для абсолютного позиционирования звёзд */
+	}
+
+	.avatar {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+	.rating {
+		font-size: 1.2em;
+		color: #ffd700;
+		position: absolute; /* Позиционирование звёзд */
+		right: 20px; /* Отступ от правого края */
+		top: 20px; /* Отступ от верхнего края */
+	}
+	.review-info {
+		margin-left: 15px; /* Отступ между аватаром и информацией */
+	}
+	.info-text {
+		font-size: 0.9em;
+		color: #777; /* Серый цвет */
+		margin: 0; /* Убрать отступы */
+	}
+	.comment {
+		font-size: 0.95em;
+		color: #333;
+		margin-top: 15px;
+	}
+}
+
+@media (max-width: 425px) {
+	.img-fluid {
+		border-radius: 8px; /* Можно изменить значение для большего или меньшего скругления */
+	}
+
+	.review-card {
+		border: 1px solid #ccc;
+		padding: 20px;
+		border-radius: 8px;
+		background-color: #fff;
+		text-align: justify; /* Выровнять текст по ширине */
+		position: relative; /* Для абсолютного позиционирования звёзд */
+	}
+
+	.avatar {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+
+	.rating-container {
+		margin-top: 10px; /* Отступ сверху для звёзд */
+	}
+
+	/* Звёзды остаются абсолютными на мобильных устройствах */
+	.rating {
+		font-size: 1.2em;
+		color: #ffd700;
+		position: relative; /* Позиционирование звёзд относительно контейнера */
+		right: 0; /* Убираем отступ от правого края */
+		top: 0; /* Убираем отступ от верхнего края */
+	}
+
+	.review-info {
+		margin-left: 15px; /* Отступ между аватаром и информацией */
+	}
+
+	.info-text {
+		font-size: 0.9em;
+		color: #777; /* Серый цвет */
+		margin: 0; /* Убрать отступы */
+	}
+
+	.comment {
+		font-size: 0.95em;
+		color: #333;
+		margin-top: 15px;
+	}
+}
+
+.text-navigation {
+	text-align: left; /* Выравнивание слева по умолчанию */
+}
+
+@media (max-width: 992px) {
+	/* Для устройств с шириной экрана меньше 992px */
+	.text-navigation {
+		text-align: center; /* Центрируем на мобильных */
+	}
+}

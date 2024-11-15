@@ -1,0 +1,67 @@
+/*Шапка*/
+
+/*Навигационное меню*/
+
+@media (max-width: 1200px) {
+	.my-navbar .navbar {
+		padding: 5px 0; /* Уменьшаем верхние и нижние отступы */
+	}
+
+	.my-navbar .nav-link {
+		margin: 0 5px; /* Уменьшаем горизонтальные отступы между пунктами меню */
+		font-size: 12px; /* Уменьшаем размер шрифта */
+	}
+}
+
+/*Отзывы*/
+
+/*Стили для карточек с отзывами*/
+@media (max-width: 1200px) {
+	.img-fluid {
+		border-radius: 8px; /* Можно изменить значение для большего или меньшего скругления */
+	}
+
+	.review-card {
+		border: 1px solid #ccc;
+		padding: 20px;
+		border-radius: 8px;
+		background-color: #fff;
+		text-align: justify; /* Выровнять текст по ширине */
+		position: relative; /* Для абсолютного позиционирования звёзд */
+	}
+
+	.avatar {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+
+	.rating-container {
+		margin-top: 10px; /* Отступ сверху для звёзд */
+	}
+
+	/* Звёзды остаются абсолютными на мобильных устройствах */
+	.rating {
+		font-size: 1.2em;
+		color: #ffd700;
+		position: relative; /* Позиционирование звёзд относительно контейнера */
+		right: 0; /* Убираем отступ от правого края */
+		top: 0; /* Убираем отступ от верхнего края */
+	}
+
+	.review-info {
+		margin-left: 15px; /* Отступ между аватаром и информацией */
+	}
+
+	.info-text {
+		font-size: 0.9em;
+		color: #777; /* Серый цвет */
+		margin: 0; /* Убрать отступы */
+	}
+
+	.comment {
+		font-size: 0.95em;
+		color: #333;
+		margin-top: 15px;
+	}
+}

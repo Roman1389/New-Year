@@ -1,0 +1,238 @@
+/* Стили для шапки */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+}
+/*О нас*/
+
+@font-face {
+	font-family: "Cormorant Garamond";
+	src: url("../fonts/CormorantGaramond-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Общий стиль для заголовка и текста */
+.festive-title {
+	font-size: 1.8rem;
+	color: #d32f2f; /* Яркий красный для новогоднего настроения */
+}
+
+.festive-text {
+	font-size: 1.1rem;
+	color: #444;
+	line-height: 1.6;
+	margin-bottom: 1rem;
+	font-family: "Cormorant Garamond", serif; /* Элегантный стиль для праздничной атмосферы */
+	background: linear-gradient(to right, #fff7e6, #ffeecc);
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	text-align: justify;
+}
+
+/*Наши услуги*/
+
+/*Отступ у раздела наших услуг (у слайдера по бокам)*/
+.container-services {
+	padding: 10px 10px 0 10px;
+}
+
+/*Стили для линии, которая подчеркивает все менюшки*/
+.section-title {
+	display: inline-block;
+	padding-bottom: 10px; /* Отступ от текста до линии */
+	position: relative;
+	font-size: 2rem; /* Размер шрифта, можете изменить по желанию */
+	color: #333; /* Цвет текста, можете изменить */
+	margin-bottom: 10px; /* Отступ снизу */
+}
+
+.section-title::after {
+	content: "";
+	position: absolute;
+	width: 100%; /* Линия на всю ширину текста */
+	height: 5px; /* Толщина линии */
+	background-color: #dc3545; /* Цвет линии */
+	left: 0;
+	bottom: 0;
+}
+
+/*Стили для вкладок Услуг*/
+
+#serviceTabs {
+	display: flex; /* Включаем Flexbox для размещения вкладок в строку */
+	justify-content: space-between; /* Распределяем вкладки по ширине */
+	padding: 0; /* Убираем отступы */
+	margin: 0; /* Убираем внешние отступы */
+	list-style: none; /* Убираем маркеры списка */
+	border-bottom: none; /* Линия под вкладками */
+}
+
+#serviceTabs .nav-item {
+	margin: 0 5px; /* Отступы между вкладками */
+}
+
+#serviceTabs .nav-link {
+	text-align: center; /* Центрируем текст */
+	display: block; /* Делаем ссылки блочными для удобства клика */
+	padding: 10px 15px; /* Увеличиваем внутренние отступы */
+	border-radius: 4px 4px 0 0; /* Скругляем углы сверху */
+	border: 1px solid transparent; /* Убираем рамки по умолчанию */
+	color: #c5211e; /* Цвет текста вкладок */
+	text-decoration: none; /* Убираем подчеркивание */
+	transition: all 0.3s ease, transform 0.3s ease; /* Плавный переход и анимация размера */
+}
+
+#serviceTabs .nav-link:hover {
+	background-color: #f8f8f8; /* Легкий фон при наведении */
+	color: #a5181c; /* Более темный текст при наведении */
+	border: 1px solid #ddd; /* Добавляем рамку при наведении */
+	border-bottom: none; /* Убираем рамку снизу для эффекта "выступания" */
+	transform: scale(1.05); /* Увеличиваем вкладку при наведении */
+}
+
+#serviceTabs .nav-link.active {
+	background: #ffffff; /* Фон активной вкладки */
+	color: #c5211e; /* Активный цвет текста */
+	font-weight: bold; /* Жирный шрифт */
+	border: 1px solid #ddd; /* Рамка вокруг активной вкладки */
+	border-bottom: 2px solid #ffffff; /* "Выступающая" вкладка без нижней границы */
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+	transform: scale(1.05); /* Легкое увеличение активной вкладки */
+	animation: activeTabAnimation 0.3s ease; /* Анимация для активной вкладки */
+}
+
+#serviceTabs .nav-link:focus {
+	outline: none; /* Убираем стандартную обводку при фокусе */
+	box-shadow: none; /* Убираем тень, если она применялась при фокусе */
+}
+
+@keyframes activeTabAnimation {
+	0% {
+		transform: scale(1); /* Начальный размер */
+		opacity: 0.7; /* Начальная прозрачность */
+	}
+	100% {
+		transform: scale(1.05); /* Конечный размер */
+		opacity: 1; /* Конечная непрозрачность */
+	}
+}
+
+/*Карточки услуг текст*/
+.card-body .card-title,
+.card-body .card-text {
+	text-align: justify;
+}
+
+.custom-text {
+	font-size: 20px; /* Укажите нужное значение для размера шрифта */
+}
+/*Галерея*/
+
+/*Стили для вкладок галереи*/
+
+#galleryTab {
+	display: flex; /* Включаем Flexbox для расположения в строку */
+	justify-content: space-between; /* Распределяем пространство между вкладками */
+	padding: 0; /* Убираем отступы */
+	margin: 0; /* Убираем внешние отступы */
+	list-style: none; /* Убираем маркеры списка */
+	border-bottom: none; /* Убираем нижнюю границу под вкладками */
+}
+
+#galleryTab .nav-item {
+	margin: 0 5px; /* Задаем отступы по горизонтали между вкладками */
+}
+
+#galleryTab .nav-link {
+	text-align: center; /* Выравнивание текста по центру */
+	display: block; /* Делаем ссылки блочными для полной кликабельности */
+	padding: 10px 15px; /* Увеличиваем внутренние отступы */
+	border-radius: 4px 4px 0 0; /* Скругляем углы сверху */
+	border: 1px solid transparent; /* Убираем рамки по умолчанию */
+	color: #c5211e; /* Цвет текста вкладок */
+	text-decoration: none; /* Убираем подчеркивание */
+	transition: all 0.3s ease, transform 0.3s ease; /* Плавный переход и анимация размера */
+	font-size: 15px; /* Размер шрифта */
+}
+
+#galleryTab .nav-link:hover {
+	background-color: #f8f8f8; /* Легкий фон при наведении */
+	color: #a5181c; /* Более темный текст при наведении */
+	border: 1px solid #ddd; /* Добавляем рамку при наведении */
+	border-bottom: none; /* Убираем рамку снизу для эффекта "выступания" */
+	transform: scale(1.05); /* Увеличиваем вкладку при наведении */
+}
+
+#galleryTab .nav-link.active {
+	background: #ffffff; /* Фон активной вкладки */
+	color: #c5211e; /* Активный цвет текста */
+	font-weight: bold; /* Жирный шрифт */
+	border: 1px solid #ddd; /* Рамка вокруг активной вкладки */
+	border-bottom: 2px solid #ffffff; /* "Выступающая" вкладка без нижней границы */
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+	transform: scale(1.05); /* Легкое увеличение активной вкладки */
+	animation: activeTabAnimation 0.3s ease; /* Анимация для активной вкладки */
+}
+
+#galleryTab .nav-link:focus {
+	outline: none; /* Убираем стандартную обводку при фокусе */
+	box-shadow: none; /* Убираем тень, если она применялась при фокусе */
+}
+
+@keyframes activeTabAnimation {
+	0% {
+		transform: scale(1); /* Начальный размер */
+		opacity: 0.7; /* Начальная прозрачность */
+	}
+	100% {
+		transform: scale(1.05); /* Конечный размер */
+		opacity: 1; /* Конечная непрозрачность */
+	}
+}
+
+/*Отзывы*/
+
+.img-fluid {
+	border-radius: 8px; /* Можно изменить значение для большего или меньшего скругления */
+}
+
+.review-card {
+	border: 1px solid #ccc;
+	padding: 20px;
+	border-radius: 8px;
+	background-color: #fff;
+	text-align: justify; /* Выровнять текст по ширине */
+	position: relative; /* Для абсолютного позиционирования звёзд */
+}
+
+.avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.rating {
+	font-size: 1.2em;
+	color: #ffd700;
+	position: absolute; /* Позиционирование звёзд */
+	right: 20px; /* Отступ от правого края */
+	top: 20px; /* Отступ от верхнего края */
+}
+.review-info {
+	margin-left: 15px; /* Отступ между аватаром и информацией */
+}
+.info-text {
+	font-size: 0.9em;
+	color: #777; /* Серый цвет */
+	margin: 0; /* Убрать отступы */
+}
+.comment {
+	font-size: 0.95em;
+	color: #333;
+	margin-top: 15px;
+}
