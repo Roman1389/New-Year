@@ -49,7 +49,7 @@ body {
 		margin-bottom: 10px; /* Добавляем отступ между логотипом и кнопками */
 	}
 
-	.my-navbar .navbar-brand img {
+	.navbar-brand.logo {
 		width: 100px; /* Ширина логотипа на мобильной версии */
 		height: 100px; /* Высота логотипа на мобильной версии */
 		margin-right: -25px;

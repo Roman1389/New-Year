@@ -1,0 +1,233 @@
+.navbar {
+	color: #ffffff;
+	padding: 10px 15px;
+}
+
+.navbar .profile {
+	display: flex;
+	align-items: center;
+}
+
+.navbar .profile img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.navbar .profile-name {
+	font-weight: bold;
+	color: #333;
+}
+
+/* Дополнительные стили для навбара */
+.navbar-nav .nav-link {
+	color: #c5211e !important;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 10px; /* Отступы между пунктами меню */
+	transition: color 0.3s ease, background-color 0.3s ease; /* Плавные переходы */
+}
+
+.navbar-nav .nav-link:hover {
+	color: #ed7e78 !important; /* Светлее оттенок при наведении */
+}
+
+/* Центрирование элементов на мобильных устройствах */
+@media (max-width: 767px) {
+	.navbar-nav {
+		text-align: center;
+	}
+	.navbar-nav .nav-item {
+		margin-bottom: 10px; /* Расстояние между пунктами меню */
+	}
+}
+
+/* Стили для фильтров */
+.filters-container {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+}
+
+.filters-container .form-control {
+	flex: 1;
+	min-width: 200px;
+}
+
+@media (max-width: 767px) {
+	.filters-container {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.filters-container .form-control {
+		width: 100%;
+	}
+
+	.filters-container .btn {
+		width: 100%;
+	}
+}
+
+/* Стили для карточек */
+.card {
+	margin-bottom: 15px;
+}
+
+.card .card-body {
+	padding: 15px;
+}
+
+.card .card-title {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.card .card-text {
+	margin: 10px 0;
+}
+
+/* Стили для логотипа */
+.logo-container {
+	width: 100px; /* Размер контейнера для логотипа */
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo-container .logo-img {
+	width: 100%; /* Логотип масштабируется по ширине контейнера */
+	height: auto; /* Сохраняем пропорции изображения */
+}
+
+/* Эффекты при наведении на логотип */
+.logo-container .logo-img:hover {
+	transform: scale(1.1); /* Увеличение логотипа */
+	transition: transform 0.3s ease; /* Плавный переход */
+}
+
+/* Выравнивание логотипа, профиля и бургер-меню в один ряд */
+.navbar .profile {
+	display: flex;
+	align-items: center;
+}
+
+.navbar .profile img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.navbar .profile-name {
+	font-weight: bold;
+	font-size: 14px;
+	color: #333;
+	white-space: nowrap;
+}
+
+/* Скрыть один из профилей в зависимости от устройства */
+.d-lg-none {
+	display: none !important;
+}
+
+@media (max-width: 992px) {
+	.d-lg-none {
+		display: flex !important;
+	}
+
+	.d-lg-flex {
+		display: none !important;
+	}
+	.logo-container {
+		width: 100px; /* Ширина логотипа на мобильной версии */
+		height: 100px; /* Высота логотипа на мобильной версии */
+		margin-right: -25px;
+	}
+}
+
+/*Стили для вкладок*/
+#orderTabs {
+	display: flex; /* Включаем Flexbox для расположения в строку */
+	justify-content: space-between; /* Распределяем пространство между вкладками */
+	padding: 0; /* Убираем отступы */
+	margin: 0; /* Убираем внешние отступы */
+	list-style: none; /* Убираем маркеры списка */
+	border-bottom: none; /* Убираем нижнюю границу под вкладками */
+}
+
+#orderTabs .nav-item {
+	margin: 0 5px; /* Задаем отступы по горизонтали между вкладками */
+}
+
+#orderTabs .nav-link {
+	text-align: center; /* Выравнивание текста по центру */
+	display: block; /* Делаем ссылки блочными для полной кликабельности */
+	padding: 10px 15px; /* Увеличиваем внутренние отступы */
+	border-radius: 4px 4px 0 0; /* Скругляем углы сверху */
+	border: 1px solid transparent; /* Убираем рамки по умолчанию */
+	color: #c5211e; /* Цвет текста вкладок */
+	text-decoration: none; /* Убираем подчеркивание */
+	transition: all 0.3s ease, transform 0.3s ease; /* Плавный переход и анимация размера */
+	font-size: 15px; /* Размер шрифта */
+}
+
+#orderTabs .nav-link:hover {
+	background-color: #f8f8f8; /* Легкий фон при наведении */
+	color: #a5181c; /* Более темный текст при наведении */
+	border: 1px solid #ddd; /* Добавляем рамку при наведении */
+	border-bottom: none; /* Убираем рамку снизу для эффекта "выступания" */
+	transform: scale(1.05); /* Увеличиваем вкладку при наведении */
+}
+
+#orderTabs .nav-link.active {
+	background: #ffffff; /* Фон активной вкладки */
+	color: #c5211e; /* Активный цвет текста */
+	font-weight: bold; /* Жирный шрифт */
+	border: 1px solid #ddd; /* Рамка вокруг активной вкладки */
+	border-bottom: 2px solid #ffffff; /* "Выступающая" вкладка без нижней границы */
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+	transform: scale(1.05); /* Легкое увеличение активной вкладки */
+	animation: activeTabAnimation 0.3s ease; /* Анимация для активной вкладки */
+}
+
+#orderTabs .nav-link:focus {
+	outline: none; /* Убираем стандартную обводку при фокусе */
+	box-shadow: none; /* Убираем тень, если она применялась при фокусе */
+}
+
+@keyframes activeTabAnimation {
+	0% {
+		transform: scale(1); /* Начальный размер */
+		opacity: 0.7; /* Начальная прозрачность */
+	}
+	100% {
+		transform: scale(1.05); /* Конечный размер */
+		opacity: 1; /* Конечная непрозрачность */
+	}
+}
+
+/* Вкладки в столбик на мобильных устройствах */
+@media (max-width: 768px) {
+	#orderTabs {
+		flex-direction: column; /* Для мобильных устройств, располагаем элементы вертикально */
+		align-items: flex-start; /* Выравниваем элементы по левому краю (горизонтально) */
+		width: 100%; /* Устанавливаем ширину контейнера на 100% */
+		padding: 0 10px; /* Добавляем отступы по бокам, чтобы не касались краев экрана */
+	}
+
+	#orderTabs .nav-item {
+		width: 100%; /* Задаем ширину 100% для каждого элемента nav-item */
+		margin-bottom: 5px; /* Отступ между элементами */
+	}
+
+	#orderTabs .nav-link {
+		display: block; /* Делаем ссылки блочными элементами */
+		width: 100%; /* Задаем ширину 100% для ссылки */
+		text-align: left; /* Выравниваем текст внутри ссылки по левому краю */
+		padding: 10px 15px; /* Увеличиваем внутренние отступы для удобства */
+	}
+}

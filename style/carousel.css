@@ -49,3 +49,7 @@
 .carousel-inner {
 	border-radius: 15px; /* Скругляем углы у всего карусели */
 }
+
+.carousel-indicators li {
+	list-style-type: none; /* Убирает цифры, если они есть */
+}

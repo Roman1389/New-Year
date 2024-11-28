@@ -35,6 +35,42 @@ body {
 	text-align: justify;
 }
 
+/*Раздел Новогодняя фотография для Альбома в ВК*/
+/* Основные стили для секции */
+
+/* Заголовки */
+.photo-contest h2,
+.photo-contest h3,
+.photo-contest h4,
+.photo-contest h5 {
+	font-family: "Pacifico", cursive;
+	color: #e74c3c;
+}
+
+/* Кнопки */
+.btn-glow {
+	color: #fff;
+	border: none;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 0 15px;
+}
+
+/* Фон и оформление уведомлений */
+.alert-info {
+	background-color: #dff9fb;
+	border-color: #22a6b3;
+}
+
+/* Текстовые акценты */
+.lead {
+	font-size: 1.2rem;
+	color: #2c3e50;
+}
+
+.photo-contest strong {
+	color: #e74c3c;
+}
+
 /*Наши услуги*/
 
 /*Отступ у раздела наших услуг (у слайдера по бокам)*/
@@ -196,6 +232,46 @@ body {
 	}
 }
 
+/*Галерея Пагинация*/
+/* Контейнер для пагинации */
+.pagination-container {
+	text-align: center;
+}
+
+/* Стили для кнопок */
+.pagination-container .btn {
+	min-width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
+	padding: 0;
+}
+
+/* Активная кнопка */
+.pagination-container .btn.active {
+	background-color: #007bff;
+	color: white;
+	pointer-events: none;
+	border: none;
+}
+
+/* Отключённые стрелки */
+.pagination-container .btn:disabled {
+	background-color: #ddd;
+	color: #aaa;
+	pointer-events: none;
+}
+
+/* Стили стрелок */
+.pagination-container .round-btn {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding: 0;
+}
+
 /*Отзывы*/
 
 .img-fluid {
@@ -235,4 +311,56 @@ body {
 	font-size: 0.95em;
 	color: #333;
 	margin-top: 15px;
+}
+
+/*Форма регистрации Фото профиля */
+#avatarContainer {
+	display: flex;
+	align-items: center; /* Выравниваем элементы по вертикали */
+	gap: 10px; /* Отступ между изображением и полем загрузки */
+	width: 100%; /* Убедимся, что контейнер занимает всю ширину */
+}
+
+#avatarPreviewWrapper {
+	display: flex;
+	align-items: center; /* Выравниваем элементы по вертикали */
+	flex-shrink: 0; /* Не даем контейнеру с аватаром сжиматься */
+	gap: 10px; /* Отступ между аватаром и кнопкой */
+}
+
+#avatarPreviewContainer {
+	display: none; /* По умолчанию скрыто */
+	align-items: center; /* Выравниваем элементы по центру */
+	flex: 0 0 auto; /* Не растягиваем контейнер */
+}
+
+#clearAvatar {
+	display: none; /* По умолчанию скрыто */
+	align-items: center; /* Выравниваем элементы по центру */
+}
+
+#clearAvatar {
+	display: none; /* По умолчанию скрыто */
+	align-items: center; /* Выравниваем элементы по центру */
+	border-radius: 50%; /* Делаем кнопку круглой */
+	width: 30px; /* Устанавливаем фиксированный размер */
+	height: 30px; /* Устанавливаем фиксированный размер */
+	padding: 0; /* Убираем внутренние отступы */
+	cursor: pointer; /* Курсор при наведении */
+	background-color: red; /* Красный фон */
+	border: none; /* Убираем стандартный бордер */
+}
+
+#clearAvatar i {
+	color: white; /* Белый цвет крестика */
+	font-size: 16px; /* Размер крестика */
+}
+
+#clearAvatar:hover {
+	background-color: darkred; /* Темный красный при наведении */
+}
+
+#avatar {
+	width: 100%; /* Форме даем всю ширину контейнера */
+	margin: 0; /* Убираем отступы у формы */
 }

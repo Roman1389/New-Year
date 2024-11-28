@@ -9,79 +9,108 @@ include('connect.php');
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Новогодняя программа</title>
-
-   <!--Bootstrap-->
-   <!--Bootstrap CSS-->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-   <!--Font Awesome-->
-   <!-- Font Awesome для иконок -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-   <!--CSS-->
-   <!-- Основной стиль сайта -->
+   <!-- Favicon -->
+   <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+   <!-- CSS -->
    <link rel="stylesheet" href="style/style.css">
-   <!-- Стиль для панели навигации -->
    <link rel="stylesheet" href="style/navbar.css">
-   <!-- Стиль для шапки страницы -->
    <link rel="stylesheet" href="style/header.css">
-   <!-- Стиль для карусели изображений -->
    <link rel="stylesheet" href="style/carousel.css">
-   <!-- Стиль для подвала сайта -->
    <link rel="stylesheet" href="style/footer.css">
-   <!-- Стиль для всплывающих окон -->
    <link rel="stylesheet" href="style/popup.css">
-
-   <!--Адаптация-->
-   <!--Пк адаптация-->
    <link rel="stylesheet" href="style/desktop.css">
-   <!--Мобильная адаптация-->
    <link rel="stylesheet" href="style/mobile.css">
 </head>
 
 <body>
-   <!--! Шапка сайта -->
-   <!-- Навбар -->
-   <?php include('navbar.php'); ?>
+   <!-- Navbar -->
+   <?php include 'layouts/site/navbar.php'; ?>
 
-   <!-- Шапка с фоновым изображением -->
-   <?php include('header.php'); ?>
+   <!-- Header -->
+   <?php include('layouts/site/header.php'); ?>
 
-   <!--! Раздел сайта о нас-->
+   <!-- О нас -->
+   <?php include('layouts/site/about_us.php'); ?>
 
-   <?php include('about_us.php'); ?>
+   <!-- Альбом -->
+   <?php include('layouts/site/album.php'); ?>
 
-   <!-- Раздел сайта Наши Особенности-->
-   <?php include('features.php'); ?>
+   <!-- Наши особенности -->
+   <?php include('layouts/site/features.php'); ?>
 
+   <!-- Наши услуги -->
+   <?php include('layouts/site/services.php'); ?>
 
-   <!--! Блок наши услуги-->
-
-   <!-- Раздел "Наши услуги" -->
-   <?php include('services.php'); ?>
+   <!-- FAQ -->
+   <?php include('layouts/site/FAQ.php'); ?>
 
    <!-- Галерея -->
-   <?php include('gallery.php'); ?>
+   <?php include('layouts/site/gallery.php'); ?>
 
-   <!-- Отзывы-->
-   <?php include('reviews.php'); ?>
+   <!-- Отзывы -->
+   <?php include('layouts/site/reviews.php'); ?>
 
-   <!--Подвал-->
-   <?php include('footer.php'); ?>
+   <!-- Footer -->
+   <?php include('layouts/site/footer.php'); ?>
 
    <!-- Всплывающее сообщение -->
-   <?php include('popup.php'); ?>
+   <?php include('layouts/site/popup.php'); ?>
 
+   <!-- Подключение jQuery -->
+   <script src="assets/jQuery/jquery-3.6.0.js"></script>
 
-   <!-- Подключите jQuery и Bootstrap JS -->
-   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <!-- Подключение Inputmask версии 5.0.6 -->
+   <script src="assets/inputMask/jquery.inputmask.min.js"></script>
 
-   <!-- Подключение Bootstrap js-->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <!-- Подключение Bootstrap с Popper.js -->
+   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-   <!-- Подключение папки js-->
-   <!-- Подключение папки js-->
-   <script src="/js/script.js"></script>
+   <!-- Cкрипты -->
+   <!-- Регистрация и авторизация -->
+   <script src="/js/auth/registration.js"></script>
+   <script src="/js/auth/login.js"></script>
 
+   <!-- Техподдержка -->
+   <script src="/js/site/script.js"></script>
+
+   <!-- Пагинация на сайте у Галереи -->
+   <script src="/js/site/paginate.js"></script>
+
+   <!-- Услуги на сайте обработка форм услуг -->
+   <!-- Моробус -->
+   <script src="/js/services/morobus.js"></script>
+   <!-- Автобус -->
+   <script src="/js/services/bus.js"></script>
+   <!-- Детские поздравления в детский сад и школу -->
+   <script src="/js/services/children.js"></script>
+   <!-- Аренда Аниматоров -->
+   <script src="/js/services/animator.js"></script>
+   <!-- Поздравление на дом -->
+   <script src="/js/services/family.js"></script>
+   <!-- Поздравление на улице, во дворе в ТСЖ -->
+   <script src="/js/services/street.js"></script>
+   <!-- Поздравление в офис или на корпоратив -->
+   <script src="/js/services/office.js"></script>
+   <!-- Поздравление в офис или на корпоратив -->
+   <script src="/js/services/restaurant.js"></script>
+   <!-- Случайная встреча -->
+   <script src="/js/services/surprise.js"></script>
+   <!-- Фотосессия -->
+   <script src="/js/services/photosession.js"></script>
+   <!-- Онлайн поздравление -->
+   <script src="/js/services/online.js"></script>
+   <!-- Поздравление по телефону -->
+   <script src="/js/services/phone.js"></script>
+
+   <!-- Быстрая заявка без регистрации -->
+   <script src="/js/site/applications.js"></script>
+
+   <!-- Быстрая заявка без регистрации -->
+   <script src="/js/user/feedback.js"></script>
 </body>
 
 </html>

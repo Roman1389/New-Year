@@ -1,4 +1,13 @@
 /*Стили для навигационной панели*/
+.navbar-brand.logo {
+	display: block; /* Чтобы элемент вел себя как блочный */
+	width: 100px; /* Укажите ширину логотипа */
+	height: 100px; /* Укажите высоту логотипа */
+	background-image: url("../images/Logo/logo.png"); /* Путь к изображению */
+	background-size: contain; /* Масштабирование, чтобы полностью вписать */
+	background-repeat: no-repeat; /* Избегайте повторения изображения */
+	background-position: center; /* Центрирование изображения */
+}
 
 .my-navbar .navbar {
 	background: #fff;

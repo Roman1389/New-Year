@@ -1,0 +1,133 @@
+document.addEventListener("DOMContentLoaded", () => {
+	const pricePerPerson = 2000 // Фиксированная цена за онлайн поздравление
+	const peopleCountInput = document.getElementById("peopleCountOnline")
+	const minusButton = document.getElementById("minusButtonOnline")
+	const plusButton = document.getElementById("plusButtonOnline")
+	const dateInput = document.getElementById("dateOnline")
+	const timeSelect = document.getElementById("timeOnline")
+	const serviceId = document.querySelector("input[name='service_id']").value
+	const userId = document.getElementById("userId11").value
+	const form = document.getElementById("onlineGreetingForm")
+	const timeMessage = document.getElementById("timeMessageOnline")
+	const maxSeats = 30
+
+	$(document).ready(function () {
+		$("#phoneOnline").inputmask({
+			mask: "+7 (999) 999-99-99",
+			showMaskOnHover: false,
+			showMaskOnFocus: false,
+			placeholder: "_",
+		})
+	})
+
+	function updateAvailableTimes() {
+		const selectedDate = dateInput.value
+		if (!selectedDate) return
+
+		timeMessage.style.display = "none"
+
+		fetch("backend/services/online.php", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+			},
+			body: new URLSearchParams({
+				action: "get_free_times",
+				date: selectedDate,
+			}),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				if (data.success) {
+					timeSelect.innerHTML =
+						'<option value="" selected disabled>Выберите время</option>'
+
+					if (data.free_times.length > 0) {
+						data.free_times.forEach((hour) => {
+							const option = document.createElement("option")
+							option.value = `${hour}:00`
+							option.textContent = `${hour}:00`
+							timeSelect.appendChild(option)
+						})
+						timeSelect.style.display = "block"
+					} else {
+						timeMessage.textContent = "На выбранную дату все забронировано."
+						timeMessage.style.display = "block"
+						timeSelect.style.display = "none"
+					}
+				} else {
+					alert(data.message || "Произошла ошибка.")
+				}
+			})
+			.catch((error) => {
+				alert("Ошибка загрузки времени: " + error)
+			})
+	}
+
+	const today = new Date()
+	const formatDate = (date) => {
+		const year = date.getFullYear()
+		const month = String(date.getMonth() + 1).padStart(2, "0")
+		const day = String(date.getDate()).padStart(2, "0")
+		return `${year}-${month}-${day}`
+	}
+	const minDate = formatDate(today)
+	const maxDate = formatDate(
+		new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7)
+	)
+
+	dateInput.min = minDate
+	dateInput.max = maxDate
+	dateInput.value = minDate
+
+	dateInput.addEventListener("change", updateAvailableTimes)
+
+	updateAvailableTimes()
+
+	// Обработчики для кнопок изменения количества людей
+	minusButton.addEventListener("click", () => {
+		let count = parseInt(peopleCountInput.value, 10)
+		if (count > 1) {
+			count-- // Уменьшаем количество на 1
+			peopleCountInput.value = count
+		}
+	})
+
+	plusButton.addEventListener("click", () => {
+		let count = parseInt(peopleCountInput.value, 10)
+		if (count < maxSeats) {
+			count++ // Увеличиваем количество на 1
+			peopleCountInput.value = count
+		}
+	})
+
+	form.addEventListener("submit", (e) => {
+		e.preventDefault()
+
+		const formData = new FormData(form)
+		formData.append("action", "submit_order")
+		formData.append("user_id", userId)
+
+		fetch("backend/services/online.php", {
+			method: "POST",
+			body: formData,
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				if (data.order_success) {
+					alert(data.order_message || "Заказ успешно отправлен!")
+					location.reload()
+				} else {
+					alert(
+						data.message ||
+							"Выбранное время было только что забронировано другой услугой, пожалуйста выберите другое время."
+					)
+					// Перезагрузка страницы после ошибки
+					location.reload() // Обновляем страницу после ошибки
+				}
+			})
+			.catch((error) => {
+				alert("Ошибка отправки: " + error)
+			})
+	})
+})
